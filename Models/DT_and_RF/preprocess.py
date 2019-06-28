@@ -3,7 +3,7 @@ import sys
 import pandas as pd
 import numpy as np
 from numpy import array
-from utils.progressBar import progressBar
+from ..utils import progressBar
 ################################################
 def preprocess(data):
     r = np.arange(6501,len(data))

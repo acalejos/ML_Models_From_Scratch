@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import trees
-from utils.progressBar import progressBar
+from ..utils import progressBar
 
 def split(data):
     current = data.sample(frac = 1, random_state = 18)

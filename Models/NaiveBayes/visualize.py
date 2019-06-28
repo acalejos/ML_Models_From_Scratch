@@ -64,7 +64,7 @@ def plot_data(header,current):
     plt.xticks(np.arange(min(x),max(x)+1,1.0))
     plt.yticks(np.arange(min(y),max(y)+1,10.0))
     plt.plot(x,y)
-    saveName = "2_2_" + header + ".png"
+    saveName = "plot/" + header + ".png"
     plt.savefig(saveName)
 
 #Main function

@@ -4,6 +4,7 @@ import sys
 import pandas as pd
 import numpy as np
 from numpy import array
+from ..utils import progressBar
 #np.set_printoptions(threshold=sys.maxsize)
 def preprocess(data):
     r = np.arange(6501,len(data))
@@ -91,13 +92,6 @@ def split(data,trainingSet,testSet,fract,write):
         svm_test.to_csv("svm_"+testSet,index=False)
     #return (train,test)
 
-def progressBar(name, value, endvalue, bar_length=20):
-        percent = float(value) / endvalue
-        arrow = '-' * int(round(percent * bar_length)-1) + '>'
-        spaces = ' ' * (bar_length - len(arrow))
-
-        sys.stdout.write("\r{2} Progress: [{0}] {1}%".format(arrow + spaces, int(round(percent * 100)),name))
-        sys.stdout.flush()
 def getEncoding(length,value):
     l = [x*0 for x in range(0,length-1)]
     if value < len(l):

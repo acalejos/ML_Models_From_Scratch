@@ -3,6 +3,7 @@ import sys
 import pandas as pd
 import numpy as np
 import copy
+from ..utils import progressBar
 np.set_printoptions(threshold=sys.maxsize)
 #############################################
 
@@ -133,13 +134,6 @@ def test(testSet,model,modelIdx,threshold,name):
     else:
         print("Usage: python lr_svm.py [trainingDataFilename] [testDataFilename] [model (1 or 2)]")
 
-def progressBar(name, value, endvalue, bar_length=20):
-        percent = float(value) / endvalue
-        arrow = '-' * int(round(percent * bar_length)-1) + '>'
-        spaces = ' ' * (bar_length - len(arrow))
-
-        sys.stdout.write("\r{2} Progress: [{0}] {1}%".format(arrow + spaces, int(round(percent * 100)),name))
-        sys.stdout.flush()
 
 #Main function
 def main(argv):

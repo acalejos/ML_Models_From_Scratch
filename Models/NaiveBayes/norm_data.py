@@ -43,7 +43,7 @@ def plot_means(mean_male,mean_female):
     ax.legend(('Males','Females'))
     plt.xticks(X,mean_male.keys())
     plt.title("Mean Scores of Preference by Gender")
-    plt.savefig("2_1.png")
+    plt.savefig("plots/mean_gender_scored.png")
 
 #Main function
 def main(argv):

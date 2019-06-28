@@ -6,8 +6,9 @@ def split(data,trainingSet,testSet,fract,write):
     test = data.sample(frac=fract,random_state=47)
     train = data.drop(test.index)
     if write:
-        train.to_csv(trainingSet,index=False)
-        test.to_csv(testSet,index=False)
+        filepath = "../CSV/Produced/"
+        train.to_csv(filepath+trainingSet,index=False)
+        test.to_csv(filepath+testSet,index=False)
     return (train,test)
 
 #Main function

@@ -7,7 +7,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib.pyplot import figure
-from utils.progressBar import progressBar
+from ..utils import progressBar
 from scipy.spatial.distance import pdist, cdist
 from scipy.cluster.hierarchy import dendrogram, linkage
 from scipy import cluster

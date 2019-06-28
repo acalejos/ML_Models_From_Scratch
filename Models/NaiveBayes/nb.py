@@ -1,6 +1,8 @@
 #!/usr/bin/env python
-import sys
+import sys  
 import pandas as pd
+sys.path.append("../")
+import progressBar
 
 def trainModel(tfrac,data):
     train = data.sample(frac=tfrac,random_state=47)
@@ -40,33 +42,28 @@ def test(data,probs,headers,name):
             total += 1
         else:
             total +=1
-        if (index % 100 == 0):
-            progressBar(name,index,len(data))
-    sys.stdout.flush()
-    sys.stdout.write("\n")
+        #if (index % 100 == 0):
+            #progressBar(name,index,len(data))
+    #sys.stdout.flush()
+    #sys.stdout.write("\n")
     accuracy = round(100*float(correct) / float(total),2)
     print(name + " Accuracy: " + str(accuracy))
     return accuracy
 
-def nbc(tfrac,data):
+def nbc(tfrac, data, train_fn, test_fn):
     (model,headers) = trainModel(tfrac,data)
-    trainBed = pd.read_csv("trainingSet.csv")
-    testBed = pd.read_csv("testSet.csv")
+    trainBed = pd.read_csv(train_fn)
+    testBed = pd.read_csv(test_fn)
     test(trainBed,model,headers,"Training")
     test(testBed,model,headers,"Testing")
 
-def progressBar(name, value, endvalue, bar_length=20):
-        percent = float(value) / endvalue
-        arrow = '-' * int(round(percent * bar_length)-1) + '>'
-        spaces = ' ' * (bar_length - len(arrow))
-
-        sys.stdout.write("\r{2} Progress: [{0}] {1}%".format(arrow + spaces, int(round(percent * 100)),name))
-        sys.stdout.flush()
 #Main function
 def main(argv):
-    data = pd.read_csv("trainingSet.csv")
+    train_fn = argv[0]
+    test_fn = argv[1]
+    data = pd.read_csv(train_fn)
     tfrac = 1
-    nbc(tfrac,data)
+    nbc(tfrac,data,train_fn,test_fn)
 
 if __name__ == '__main__':
     if len(sys.argv) > 4:

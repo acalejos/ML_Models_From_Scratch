@@ -7,7 +7,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib.pyplot import figure
-from utils.progressBar import progressBar
+from ..utils import progressBar
 plt.rcParams.update({'font.size': 18})
 np.random.seed(0)
 

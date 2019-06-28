@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 import sys
 import pandas as pd
-import NaiveBayes.discretize as discretize
-import NaiveBayes.split as split
+import discretize
+import split
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -36,7 +36,7 @@ def plot_data(bins,trainResults,testResults):
     plt.plot(x,y1,c='r',marker="s",label='Model Accuracy on Training Set')
     plt.plot(x,y2,c='b',marker="o",label='Model Accuracy on Test Set')
     plt.legend(loc = 'lower right')
-    saveName = "5_2.png"
+    saveName = "plots/binSize_accuracy.png"
     plt.savefig(saveName)
 
 #Main function
