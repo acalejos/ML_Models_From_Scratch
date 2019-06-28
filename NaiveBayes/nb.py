@@ -31,7 +31,6 @@ def makePrediction(probs,event,headers):
 def test(data,probs,headers,name):
     correct = 0
     total = 0
-    i = 0
     for index,row in data.iterrows():
         current = row
         actual = current['decision']
@@ -41,9 +40,8 @@ def test(data,probs,headers,name):
             total += 1
         else:
             total +=1
-        if (i % 100 == 0):
-            progressBar(name,i,len(data))
-        i += 1
+        if (index % 100 == 0):
+            progressBar(name,index,len(data))
     sys.stdout.flush()
     sys.stdout.write("\n")
     accuracy = round(100*float(correct) / float(total),2)

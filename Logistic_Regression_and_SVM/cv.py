@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import lr_svm
-nb = __import__('5_1')
+import NaiveBayes.nb as nb
 
 def split(data):
     S = []
@@ -79,12 +79,12 @@ def plot_data(accuracies, sizes):
     for i in range(0,3):
         Y.append([])
         Err.append([])
-        for key, value in statistics[i].iteritems():
+        for _, value in statistics[i].iteritems():
             Y[i].append(round(value[0],2))
             Err[i].append(round(value[1],2))
 
     x = sizes
-    fig,ax = plt.subplots(num=None,figsize=(16,12),dpi=80,facecolor='w',edgecolor='k')
+    fig,_ = plt.subplots(num=None,figsize=(16,12),dpi=80,facecolor='w',edgecolor='k')
     fig.canvas.set_window_title("Cross-Validation Model Accuracy")
     plt.title("Cross-Validation Model Accuracy")
     plt.xlabel('Size of Training Set')

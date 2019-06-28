@@ -28,7 +28,7 @@ def crossValidate(S):
         for depth in d:
             for idx in range(1,10):
                 #print(idx)
-                test_set = S[idx]
+                #test_set = S[idx]
                 SC = list(S)
                 SC.pop(idx)
                 SC = pd.concat(SC,axis=0)
@@ -74,7 +74,7 @@ def plot_data(accuracies):
             Err[i].append(round(value[1],2))
 
     x = d
-    fig,ax = plt.subplots(num=None,figsize=(16,12),dpi=80,facecolor='w',edgecolor='k')
+    fig,_ = plt.subplots(num=None,figsize=(16,12),dpi=80,facecolor='w',edgecolor='k')
     fig.canvas.set_window_title("Cross-Validation Depth")
     plt.title("Cross-Validation Depth")
     plt.xlabel('Depth of Trees')

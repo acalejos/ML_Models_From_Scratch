@@ -40,15 +40,15 @@ def find_success_rates(input_file, labels, distinct_labels,ratings_labels):
                 #Yes second date
                 success_rates[header][current]['total'] += 1
                 success_rates[header][current]['count'] += 1
-    for key,value in success_rates.iteritems():
-        for key2, value2 in value.iteritems():
+    for key,value in success_rates.items():
+        for _, value2 in value.items():
             value2['percentage'] =  float(100*value2['total'])/float(value2['count'])
     #print(success_rates)
     return success_rates
 
 
 def plot_data(header,current):
-    fig,ax = plt.subplots(num=None,figsize=(16,12),dpi=80,facecolor='w',edgecolor='k')
+    fig,_ = plt.subplots(num=None,figsize=(16,12),dpi=80,facecolor='w',edgecolor='k')
     fig.canvas.set_window_title("Success Rates Based on "+header+" Ratings")
     plt.title("Success Rates Based on "+header+" Ratings")
     new_dict = {}

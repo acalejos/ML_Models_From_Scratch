@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 import sys
 import pandas as pd
-import discretize
-import split
+import NaiveBayes.discretize as discretize
+import NaiveBayes.split as split
 import numpy as np
 import matplotlib.pyplot as plt
 
-nb = __import__('5_1')
+import nb
 
 def testEffects(in_filename,out_filename):
     bins = [2,5,10,50,100,200]
@@ -25,7 +25,7 @@ def testEffects(in_filename,out_filename):
     return (bins,trainResults,testResults)
 
 def plot_data(bins,trainResults,testResults):
-    fig,ax = plt.subplots(num=None,figsize=(16,12),dpi=80,facecolor='w',edgecolor='k')
+    fig,_ = plt.subplots(num=None,figsize=(16,12),dpi=80,facecolor='w',edgecolor='k')
     fig.canvas.set_window_title("Model Accuray by Bin Size")
     plt.title("Model Accuracy by Bin Size")
     x = bins
