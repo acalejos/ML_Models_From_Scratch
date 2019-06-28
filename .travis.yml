@@ -1,6 +1,6 @@
 language: python
 install: 
   - pip install -r requirements.txt
-  - pip install nose pylint
+  - pip install pylint
 script:
-  "nosetests && pylint --errors-only ./"
+  "npylint --errors-only Models"
