@@ -7,7 +7,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib.pyplot import figure
-from progressBar import progressBar
+from utils.progressBar import progressBar
 from scipy.spatial.distance import pdist, cdist
 from scipy import stats
 plt.rcParams.update({'font.size': 18})

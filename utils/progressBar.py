@@ -1,5 +1,6 @@
 import sys
 
+
 def progressBar(name, value, endvalue, bar_length=20):
         percent = float(value) / endvalue
         arrow = '-' * int(round(percent * bar_length)-1) + '>'

@@ -4,7 +4,7 @@ import random
 import pandas as pd
 import numpy as np
 from numpy import array
-from progressBar import progressBar
+from utils.progressBar import progressBar
 
 
 ############## Decision Trees #############

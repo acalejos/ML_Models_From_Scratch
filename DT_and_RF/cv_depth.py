@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import trees
-from progressBar import progressBar
+from utils.progressBar import progressBar
 
 def split(data):
     shuffle = data.sample(frac = 1, random_state = 18)
@@ -69,7 +69,7 @@ def plot_data(accuracies):
     for i in range(0,3):
         Y.append([])
         Err.append([])
-        for key, value in statistics[i].items():
+        for _, value in statistics[i].items():
             Y[i].append(round(value[0],2))
             Err[i].append(round(value[1],2))
 
