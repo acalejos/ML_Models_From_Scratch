@@ -3,4 +3,4 @@ install:
   - pip install -r requirements.txt
   - pip install pylint
 script:
-  "npylint --errors-only Models"
+  "pylint --errors-only Models"
