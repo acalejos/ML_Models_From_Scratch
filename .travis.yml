@@ -3,4 +3,4 @@ install:
   - pip install -r requirements.txt
   - pip install nose pylint
 script:
-  "nosetests && pylint --errors-only"
+  "nosetests && pylint --errors-only ./"
